@@ -1,1 +1,35 @@
-/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Polyfill Vmax - Vmin - Vw - Vh </title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vmax;
+
+        }
+        .section {
+            width: 50vw;
+            height: 50vh;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="section"></div>
+</body>
+
+<script src="../js/viewport-units-buggyfill.js"></script>
+<script type="text/javascript">
+    window.viewportUnitsBuggyfill.init({ force: true, refreshDebounceWait: 1000, hacks: window.viewportUnitsBuggyfillHacks });
+</script>
+<script>window.viewportUnitsBuggyfill.init({ force: true, refreshDebounceWait: 1000, hacks: window.viewportUnitsBuggyfillHacks });</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</html>
