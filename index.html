@@ -12,8 +12,16 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            min-height: 100vmax;
+            min-height: 100vh;
 
+        }
+        .top {
+            display: flex;
+            height: 25vh;
+            width: 50vw;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 30px;
         }
         .section {
             width: 50vw;
@@ -23,13 +31,20 @@
     </style>
 </head>
 <body>
+    <div class="top"></div>
     <div class="section"></div>
 </body>
 
-<script src="js/viewport-units-buggyfill.js"></script>
-<script type="text/javascript">
-    window.viewportUnitsBuggyfill.init({ force: true, refreshDebounceWait: 1000, hacks: window.viewportUnitsBuggyfillHacks });
-</script>
-<script>window.viewportUnitsBuggyfill.init({ force: true, refreshDebounceWait: 1000, hacks: window.viewportUnitsBuggyfillHacks });</script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+        $( window ).resize(function() { 
+            var a = $('.section').width();
+            $('.top').html(a + ' px');
+            // console.log(a);
+        });
+
+        $('.top').html($('.section').width() + ' px');
+</script>
+<!-- <script src="js/viewport-units-buggyfill.js"></script>
+<script>window.viewportUnitsBuggyfill.init({ force: true, refreshDebounceWait: 1000, hacks: window.viewportUnitsBuggyfillHacks });</script> -->
 </html>
